@@ -9,11 +9,11 @@ export default function PlanetLayout({
 }>) {
   return (
     <PlanetProvider>
-      <div className="min-h-screen bg-app">
-        <div className="flex flex-col justify-center items-center w-full py-20">
+      <div className="min-h-screen bg-app bg-[-330px] md:bg-inherit overflow-hidden">
+        <div className="flex flex-col justify-center items-center w-full py-12">
           <Image
             src="/logo-title.png"
-            className="max-w-56 mb-14"
+            className="max-w-44 mb-12"
             width={320}
             height={180}
             alt=""

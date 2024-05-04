@@ -8,8 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      backgroundPosition: {
+        inherit: 'inherit'
+      },
       backgroundImage: {
         app: "url('/background-planets.png')",
+        box: "url('/figure.png')",
       },
       colors: {
         app: {

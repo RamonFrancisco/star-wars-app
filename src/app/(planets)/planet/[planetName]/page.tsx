@@ -1,6 +1,7 @@
 import { montserrat } from "@/app/fonts";
 import { CgTerrain } from "react-icons/cg";
-import { FaThermometerThreeQuarters, FaUsers } from "react-icons/fa";
+import { FaThermometerThreeQuarters, FaUsers, FaChevronLeft, FaUser } from "react-icons/fa";
+import { PiFilmSlateFill } from 'react-icons/pi'
 
 import Image from "next/image";
 import * as Card from '@/components/Card/Index'
@@ -69,14 +70,14 @@ export default async function PlanetPage({ params }: PlanetProps) {
         </div>
         <Card.Root>
           <Card.Title>
-            <FaThermometerThreeQuarters className="mr-2 text-xl" />
+            <FaUser className="mr-2 text-xl" />
             <p className="font-bold">Residents:</p>
           </Card.Title>
           <p >{residents.join(', ')}</p>
         </Card.Root>
         <Card.Root>
           <Card.Title>
-            <FaThermometerThreeQuarters className="mr-2 text-xl" />
+            <PiFilmSlateFill className="mr-2 text-xl" />
             <p className="font-bold">Films ({planet?.films.length}):</p>
             </Card.Title>
             <p >{films.join(', ')}</p>
@@ -84,8 +85,9 @@ export default async function PlanetPage({ params }: PlanetProps) {
         </Card.Root>
       </div>
       
-      <Link href={'/'} className="self-end text-white">
-       voltar
+      <Link href={'/'} className="self-end flex items-center text-white">
+        <FaChevronLeft className="mr-2 my-4" />
+        voltar
       </Link>
 
     </main>
