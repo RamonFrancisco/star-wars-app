@@ -9,9 +9,18 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        app: "url('/background-planets.png')",
+      },
+      colors: {
+        app: {
+          gray: {
+            100: "#F1F1F1",
+            500: "#909090",
+          },
+        },
+      },
+      fontFamily: {
+        montserrat: ["var(--font-montserrat)"],
       },
     },
   },
