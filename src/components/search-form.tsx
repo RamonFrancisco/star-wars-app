@@ -3,6 +3,7 @@ import { getPlanet } from "@/data/integration/planets";
 import { useRouter } from "next/navigation";
 import { FormEvent, HTMLAttributes, useState } from "react";
 import { usePlanets } from "@/context/planet-context";
+import { FaSearch } from 'react-icons/fa'
 
 export function SearchForm() {
   const router = useRouter()
@@ -21,7 +22,8 @@ export function SearchForm() {
         placeholder="Enter the name in the planet"
         className="w-full rounded text-center p-2 mb-2 outline-none placeholder:text-zinc-500" 
       />
-      <button className="w-full rounded text-center bg-red-600 text-white p-2 ">
+      <button className="w-full flex items-center justify-center rounded bg-red-600 hover:bg-red-800 text-white p-2 ">
+        <FaSearch className="mr-2" />
         Search
       </button>
       {/* <div className="flex">
