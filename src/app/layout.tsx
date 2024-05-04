@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { lato } from "./fonts";
 
 export const metadata: Metadata = {
   title: "Star Wars App",
@@ -16,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="PT-br">
-      <body className={inter.className}>{children}</body>
+      <body className={lato.className}>{children}</body>
     </html>
   );
 }
