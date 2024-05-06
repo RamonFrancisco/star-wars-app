@@ -1,7 +1,7 @@
 export interface People {
-  name: string
+  name: string;
 }
 
 export type PeopleT = {
-  name: string
-}
+  name: string;
+};

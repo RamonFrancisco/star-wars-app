@@ -7,7 +7,6 @@ export function Footer() {
         STARUARS LTDA | CNPJ: 77.777.777/0007-07 | 2023 | Todos os direitos
         reservados
       </p>
-
       <Image
         src="/logo-footer.png"
         className="md:ml-8"

@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       backgroundPosition: {
-        inherit: 'inherit'
+        inherit: "inherit",
       },
       backgroundImage: {
         app: "url('/background-planets.png')",

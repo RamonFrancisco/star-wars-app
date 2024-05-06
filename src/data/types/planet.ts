@@ -1,6 +1,3 @@
-import { Film } from "./film";
-import { People } from "./people";
-
 export interface Planet {
   id: string;
   population: string;
@@ -10,6 +7,3 @@ export interface Planet {
   films: string[];
   residents: string[];
 }
-
-
-

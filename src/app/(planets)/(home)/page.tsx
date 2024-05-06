@@ -13,13 +13,6 @@ export default function Home() {
           width={400}
           height={400}
         />
-        {/* <Image
-          src={"/figure.png"}
-          alt=""
-          className="rounded-xl"
-          width={400}
-          height={400}
-        /> */}
       </div>
       <div className="p-5 md:p-12">
         <p
