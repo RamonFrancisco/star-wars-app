@@ -1,18 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1>Star wars app</h1>
 
-## Getting Started
+Esse projeto apresenta os dados dos planetas da grande saga Star Wars, os dados são buscados na API do [swapi.dev](https://https://swapi.dev/).
 
-First, run the development server:
+## [Star wars app](https://https://swa.ramonfs.com.br/)
 
-```bash
-npm run dev
-# or
-yarn dev
+Acesse o projeto [aqui](https://github.com/RamonFrancisco/star-wars-app/).
 
-## Deploy on Vercel
+## Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- NextJs
+- Tailwind CSS
+- React-icons
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# star-wars-app
+## Rodando o projeto
+
+#### Instalação
+
+```node
+npm install;
 ```
+
+#### Iniciando
+
+```node
+npm run dev
+```
+
+Este comando roda localmente, abrindo o seu navegador e acessando o endereço [http://localhost:3000](http://localhost:3000) aparecerá o resultado do desenvolvimento.
