@@ -1,13 +1,16 @@
 import { montserrat } from "@/app/fonts";
 import { CgTerrain } from "react-icons/cg";
-import { FaThermometerThreeQuarters, FaUsers, FaChevronLeft, FaUser } from "react-icons/fa";
-import { PiFilmSlateFill } from 'react-icons/pi'
+import {
+  FaThermometerThreeQuarters,
+  FaUsers,
+  FaChevronLeft,
+  FaUser,
+} from "react-icons/fa";
+import { PiFilmSlateFill } from "react-icons/pi";
 
 import Image from "next/image";
-import * as Card from '@/components/Card/Index'
+import * as Card from "@/components/Card/Index";
 import { getPlanet } from "@/data/integration/planets";
-import { getFilm } from "@/data/integration/film";
-import { getPeople } from "@/data/integration/people";
 import Link from "next/link";
 
 interface PlanetProps {
@@ -16,25 +19,38 @@ interface PlanetProps {
   };
 }
 
+interface imageUrlI {
+  [index: string]: string;
+}
+
+const imageUrl: imageUrlI = {
+  naboo: "https://cryptospro.com.br/planetas/planeta_0001_naboo.png",
+  mustafar: "https://cryptospro.com.br/planetas/planeta_0002_mustafar.png",
+  kashyyyk: "https://cryptospro.com.br/planetas/planeta_0003_kashyyyk.png",
+  hoth: "https://cryptospro.com.br/planetas/planeta_0004_hoth.png",
+  endor: "https://cryptospro.com.br/planetas/planeta_0005_endor.png",
+  dagobah: "https://cryptospro.com.br/planetas/planeta_0006_dagobah.png",
+  coruscant: "https://cryptospro.com.br/planetas/planeta_0007_coruscant.png",
+  bespin: "https://cryptospro.com.br/planetas/planeta_0008_bespin.png",
+  alderaan: "https://cryptospro.com.br/planetas/planeta_0009_alderaan.png",
+  tatooine: "https://cryptospro.com.br/planetas/planeta_0000_tatooine.png",
+};
+
 export default async function PlanetPage({ params }: PlanetProps) {
   const planet = await getPlanet(params.planetName);
-  
+  const name: string = planet.name.toLocaleLowerCase();
+
   return (
-    <main
-      className={`${montserrat.className} flex flex-col`}
-    >
+    <main className={`${montserrat.className} flex flex-col`}>
       <div className="flex flex-col p-7 shadow bg-white rounded-xl max-w-[300px] md:min-w-[592px]">
         <div className="flex flex-col md:flex-row gap-8 w-full mb-1">
           <div className="flex items-center gap-4 mr-6">
-            <Image
-              src={"https://cryptospro.com.br/planetas/planeta_0009_alderaan.png"}
-              width={82}
-              height={82}
-              alt=""
-            />
+            <Image src={imageUrl[name]} width={82} height={82} alt="" />
             <div className="">
               <p className="text-sm">Planet</p>
-              <span className="font-black text-lg uppercase">{planet?.name}</span>
+              <span className="font-black text-lg uppercase">
+                {planet?.name}
+              </span>
             </div>
           </div>
           <div className="flex flex-col">
@@ -64,23 +80,21 @@ export default async function PlanetPage({ params }: PlanetProps) {
             <FaUser className="mr-2 text-xl" />
             <p className="font-bold">Residents:</p>
           </Card.Title>
-          <p >{planet.residents.join(', ')}</p>
+          <p>{planet.residents.join(", ")}</p>
         </Card.Root>
         <Card.Root>
           <Card.Title>
             <PiFilmSlateFill className="mr-2 text-xl" />
             <p className="font-bold">Films ({planet?.films.length}):</p>
-            </Card.Title>
-            <p >{planet.films.join(', ')}</p>
-        
+          </Card.Title>
+          <p>{planet.films.join(", ")}</p>
         </Card.Root>
       </div>
-      
-      <Link href={'/'} className="self-end flex items-center text-white">
+
+      <Link href={"/"} className="self-end flex items-center text-white">
         <FaChevronLeft className="mr-2 my-4" />
         voltar
       </Link>
-
     </main>
   );
 }
