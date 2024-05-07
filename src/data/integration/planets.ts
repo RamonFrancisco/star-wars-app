@@ -37,22 +37,27 @@ const callOtherServices = async (paths: string[], service: Function) => {
 };
 
 export async function getPlanet(planetName: string): Promise<Planet> {
-  const response = await api(`planets/?search=${planetName}`);
-  const planet = await response.json();
+  try {
+    const response = await api(`planets/?search=${planetName}`);
+    const planet = await response.json();
 
-  const id = getIdByUrl(planet.results[0].url);
-  const films = await callOtherServices(planet.results[0].films, getFilm);
-  const residents = await callOtherServices(
-    planet.results[0].residents,
-    getPeople
-  );
+    const id = getIdByUrl(planet.results[0].url);
+    const films = await callOtherServices(planet.results[0].films, getFilm);
+    const residents = await callOtherServices(
+      planet.results[0].residents,
+      getPeople
+    );
 
-  const planetResult = {
-    ...planet.results[0],
-    id,
-    films,
-    residents,
-  };
+    const planetResult = {
+      ...planet.results[0],
+      id,
+      films,
+      residents,
+    };
 
-  return planetResult;
+    return planetResult;
+  } catch (error) {
+    console.error(error);
+    throw new Error("Failed to fetch planet.");
+  }
 }

@@ -20,7 +20,7 @@ interface PlanetProps {
 }
 
 interface imageUrlI {
-  [index: string]: string;
+  [planetName: string]: string;
 }
 
 const imageUrl: imageUrlI = {
